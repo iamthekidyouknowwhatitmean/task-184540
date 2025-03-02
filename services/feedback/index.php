@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("О сервисе");
+$APPLICATION->SetTitle("-----");
 ?>
-Основная страница
+Обратная связь
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

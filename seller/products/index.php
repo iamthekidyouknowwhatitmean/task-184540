@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("О сервисе");
+$APPLICATION->SetTitle("Мои объявления");
 ?>
-Основная страница
+Объявления продавца
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

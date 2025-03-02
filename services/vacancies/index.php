@@ -2,5 +2,5 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("О сервисе");
 ?>
-Основная страница
+Вакансии
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
