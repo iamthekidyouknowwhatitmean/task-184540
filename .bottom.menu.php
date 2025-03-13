@@ -2,18 +2,40 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Контакты", 
-		"contacts/", 
+		"Главная", 
+		"index.php", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Авторизация", 
-		"login/", 
+		"Объявления", 
+		"announcements/", 
 		Array(), 
 		Array(), 
 		"" 
+	),
+	Array(
+		"О сервисе", 
+		"services/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"ЛК продавца", 
+		"seller/", 
+		Array(), 
+		Array(), 
+		"CSite::InGroup(array(1,7,8))" 
+	),
+	Array(
+		"ЛК покупателя", 
+		"buyer/", 
+		Array(), 
+		Array(), 
+		"CSite::InGroup(array(1,6,8))" 
 	)
+	
 );
 ?>

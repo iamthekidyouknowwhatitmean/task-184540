@@ -18,19 +18,20 @@
                 );?>
           </div>
         </div>
-        <?$APPLICATION->IncludeComponent("bitrix:menu",".default",Array(
-                      "ROOT_MENU_TYPE" => "top", 
-                      "MAX_LEVEL" => "4", 
-                      "CHILD_MENU_TYPE" => "top", 
-                      "USE_EXT" => "Y",
-                      "DELAY" => "N",
-                      "ALLOW_MULTI_SELECT" => "Y",
-                      "MENU_CACHE_TYPE" => "N", 
-                      "MENU_CACHE_TIME" => "3600", 
-                      "MENU_CACHE_USE_GROUPS" => "Y", 
-                      "MENU_CACHE_GET_VARS" => "" 
-                    )
-        );?>          
+        <?$APPLICATION->IncludeComponent("bitrix:menu", "bottom_menu", Array(
+	"ROOT_MENU_TYPE" => "bottom",	// Тип меню для первого уровня
+		"MAX_LEVEL" => "4",	// Уровень вложенности меню
+		//"CHILD_MENU_TYPE" => "top",	// Тип меню для остальных уровней
+		"USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+		"DELAY" => "N",	// Откладывать выполнение шаблона меню
+		"ALLOW_MULTI_SELECT" => "Y",	// Разрешить несколько активных пунктов одновременно
+		"MENU_CACHE_TYPE" => "N",	// Тип кеширования
+		"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+		"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+		"MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
+	),
+	false
+);?>          
         <div class="col-lg-4 mb-5 mb-lg-0">
           <?$APPLICATION->IncludeComponent(
             "bitrix:main.include",
@@ -46,13 +47,16 @@
       <div class="row pt-5 mt-5 text-center">
         <div class="col-md-12">
           <?$APPLICATION->IncludeComponent(
-            "bitrix:main.include",
-            "",
-            Array(
-              "AREA_FILE_SHOW" => "file",
-              "PATH" => SITE_TEMPLATE_PATH . "/includes/footer_copyright.php"
-            )
-          );?>
+	"bitrix:main.include", 
+	".default", 
+	array(
+		"AREA_FILE_SHOW" => "file",
+		"PATH" => SITE_TEMPLATE_PATH."/includes/footer_copyright.php",
+		"COMPONENT_TEMPLATE" => ".default",
+		"EDIT_TEMPLATE" => ""
+	),
+	false
+);?>
         </div>
 
       </div>

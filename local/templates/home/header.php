@@ -38,16 +38,12 @@ use Bitrix\Main\Page\Asset;
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/animate.css");
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/fl-bigmug-line.css");
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/aos.css");
-    
-    
-    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/style.css"); // не работает 
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/style.css");
     ?>
 </head>
 
 <body>
 <div id="panel"><?$APPLICATION->ShowPanel();?></div>
-  <!-- бесконечная загрузка, сайт не загружается 
-     -->
 <div class="site-loader"></div>
   <div class="site-wrap">
 
@@ -117,21 +113,25 @@ use Bitrix\Main\Page\Asset;
               </a>
             </h1>
           </div>
-          <?$APPLICATION->IncludeComponent("bitrix:menu",".default",Array(
-                      "ROOT_MENU_TYPE" => "top", 
-                      "MAX_LEVEL" => "4", 
-                      "CHILD_MENU_TYPE" => "top", 
-                      "USE_EXT" => "Y",
-                      "DELAY" => "N",
-                      "ALLOW_MULTI_SELECT" => "Y",
-                      "MENU_CACHE_TYPE" => "N", 
-                      "MENU_CACHE_TIME" => "3600", 
-                      "MENU_CACHE_USE_GROUPS" => "Y", 
-                      "MENU_CACHE_GET_VARS" => "" 
-                    )
-          );?>   
-
-
+          <?$APPLICATION->IncludeComponent(
+          "bitrix:menu", 
+          "top_menu", 
+          array(
+            "ROOT_MENU_TYPE" => "top",
+            "MAX_LEVEL" => "4",
+            "CHILD_MENU_TYPE" => "subtop",
+            "USE_EXT" => "Y",
+            "DELAY" => "N",
+            "ALLOW_MULTI_SELECT" => "Y",
+            "MENU_CACHE_TYPE" => "N",
+            "MENU_CACHE_TIME" => "3600",
+            "MENU_CACHE_USE_GROUPS" => "Y",
+            "MENU_CACHE_GET_VARS" => array(
+            ),
+            "COMPONENT_TEMPLATE" => "top_menu"
+          ),
+          false
+        );?>   
         </div>
       </div>
     </div>

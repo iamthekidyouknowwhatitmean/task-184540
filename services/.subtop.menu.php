@@ -2,42 +2,35 @@
 $aMenuLinks = Array(
 	Array(
 		"Вакансии", 
-		"vacancies/", 
+		"/services/vacancies/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Контакты", 
-		"contacts/", 
+		"/services/contacts/", 
 		Array(), 
-		Array(
-			"FROM_IBLOCK" => 1,
-			"IS_PARENT" => 1,
-			"DEPTH_LEVEL" => 1
-		), 
+		Array(), 
 		"" 
 	),
 	Array(
 		"Обратная связь",
-		"feedback/",
+		"/services/feedback/",
 		Array(),
-		Array(
-			"FROM_IBLOCK" => 1,
-			"IS_PARENT" => 0,
-			"DEPTH_LEVEL" => 2),
+		Array(),
 		""
 	),
 	Array(
 		"Новости", 
-		"news/", 
+		"/services/news/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Агенты", 
-		"agents/", 
+		"/services/agents/", 
 		Array(), 
 		Array(), 
 		"" 

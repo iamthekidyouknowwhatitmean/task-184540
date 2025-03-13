@@ -8,7 +8,7 @@ $arrFilter = array("!PROPERTY_DEAL"=> false);
 ?>
  <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
-	".default", 
+	"main_slider", 
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -30,8 +30,11 @@ $arrFilter = array("!PROPERTY_DEAL"=> false);
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
 		"FIELD_CODE" => array(
-			0 => "",
-			1 => "",
+			0 => "NAME",
+			1 => "PREVIEW_TEXT",
+			2 => "PREVIEW_PICTURE",
+			3 => "DETAIL_TEXT",
+			4 => "",
 		),
 		"FILTER_NAME" => "arrFilter",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
@@ -52,7 +55,7 @@ $arrFilter = array("!PROPERTY_DEAL"=> false);
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"PROPERTY_CODE" => array(
-			0 => "",
+			0 => "PRICE",
 			1 => "",
 		),
 		"SET_BROWSER_TITLE" => "Y",
@@ -67,7 +70,7 @@ $arrFilter = array("!PROPERTY_DEAL"=> false);
 		"SORT_ORDER1" => "ASC",
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N",
-		"COMPONENT_TEMPLATE" => ".default"
+		"COMPONENT_TEMPLATE" => "main_slider"
 	),
 	false
 );?>
@@ -116,7 +119,7 @@ $arrFilter = array("!PROPERTY_DEAL"=> false);
 </div>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.line", 
-	".default", 
+	"line1", 
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"CACHE_GROUPS" => "Y",
@@ -124,26 +127,33 @@ $arrFilter = array("!PROPERTY_DEAL"=> false);
 		"CACHE_TYPE" => "A",
 		"DETAIL_URL" => "",
 		"FIELD_CODE" => array(
-			0 => "",
-			1 => "",
+			0 => "NAME",
+			1 => "PREVIEW_TEXT",
+			2 => "PREVIEW_PICTURE",
+			3 => "PROPERTY_AREA",
+			4 => "PROPERTY_FLOORS",
+			5 => "PROPERTY_BATHROOMS",
+			6 => "PROPERTY_GARAGE",
+			7 => "PROPERTY_PRICE",
+			8 => "",
 		),
 		"IBLOCKS" => array(
 			0 => "4",
 		),
 		"IBLOCK_TYPE" => "Announcements",
 		"NEWS_COUNT" => "9",
-		"SORT_BY1" => "TIMESTAMP_X",
+		"SORT_BY1" => "SORT",
 		"SORT_BY2" => "SORT",
-		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER1" => "ASC",
 		"SORT_ORDER2" => "ASC",
-		"COMPONENT_TEMPLATE" => ".default"
+		"COMPONENT_TEMPLATE" => "line1"
 	),
 	false
 );?>
 
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.line", 
-	".default", 
+	"line2", 
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"CACHE_GROUPS" => "Y",
@@ -154,44 +164,43 @@ $arrFilter = array("!PROPERTY_DEAL"=> false);
 			0 => "NAME",
 			1 => "PREVIEW_TEXT",
 			2 => "DETAIL_TEXT",
-			3 => "",
+			3 => "PROPERTY_LINK",
 		),
 		"IBLOCKS" => array(
 			0 => "5",
 		),
 		"IBLOCK_TYPE" => "services",
 		"NEWS_COUNT" => "6",
-		"SORT_BY1" => "TIMESTAMP_X",
+		"SORT_BY1" => "SORT",
 		"SORT_BY2" => "SORT",
-		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER1" => "ASC",
 		"SORT_ORDER2" => "ASC",
-		"COMPONENT_TEMPLATE" => ".default"
+		"COMPONENT_TEMPLATE" => "line2"
 	),
 	false
 );?>
 
-<?$APPLICATION->IncludeComponent(
-	"bitrix:news.line", 
-	".default", 
-	array(
-		"ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "172800",
-		"CACHE_TYPE" => "A",
-		"DETAIL_URL" => "",
-		"FIELD_CODE" => array(
-			0 => "",
-			1 => "",
+<?$APPLICATION->IncludeComponent("bitrix:news.line", "line3", Array(
+	"ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
+		"CACHE_GROUPS" => "Y",	// Учитывать права доступа
+		"CACHE_TIME" => "172800",	// Время кеширования (сек.)
+		"CACHE_TYPE" => "A",	// Тип кеширования
+		"DETAIL_URL" => "",	// URL, ведущий на страницу с содержимым элемента раздела
+		"FIELD_CODE" => array(	// Поля
+			0 => "NAME",
+			1 => "PREVIEW_TEXT",
+			2 => "DETAIL_TEXT",
+			3 => "PREVIEW_PICTURE"
 		),
-		"IBLOCKS" => array(
+		"IBLOCKS" => array(	// Код информационного блока
 			0 => "1",
 		),
-		"IBLOCK_TYPE" => "news",
-		"NEWS_COUNT" => "3",
-		"SORT_BY1" => "TIMESTAMP_X",
-		"SORT_BY2" => "SORT",
-		"SORT_ORDER1" => "DESC",
-		"SORT_ORDER2" => "ASC",
+		"IBLOCK_TYPE" => "news",	// Тип информационного блока
+		"NEWS_COUNT" => "3",	// Количество новостей на странице
+		"SORT_BY1" => "SORT",	// Поле для первой сортировки новостей
+		"SORT_BY2" => "SORT",	// Поле для второй сортировки новостей
+		"SORT_ORDER1" => "DESC",	// Направление для первой сортировки новостей
+		"SORT_ORDER2" => "ASC",	// Направление для второй сортировки новостей
 		"COMPONENT_TEMPLATE" => ".default"
 	),
 	false
@@ -206,3 +215,4 @@ $arrFilter = array("!PROPERTY_DEAL"=> false);
 		"EDIT_TEMPLATE" => ""
 	)
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+
