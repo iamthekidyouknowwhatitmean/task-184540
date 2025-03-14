@@ -1,7 +1,7 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Мои объявления", 
+		"Избранное", 
 		"/buyer/favorites/", 
 		Array(), 
 		Array(), 

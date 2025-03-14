@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Мои объявления");
+$APPLICATION->SetTitle("Избранное");
 $APPLICATION -> AddChainItem($APPLICATION->GetTitle(),$APPLICATION->GetCurDir());
 
 ?><?$APPLICATION->IncludeComponent(
