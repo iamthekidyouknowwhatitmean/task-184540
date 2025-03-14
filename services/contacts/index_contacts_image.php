@@ -1,0 +1,1 @@
+<img src="<?=SITE_TEMPLATE_PATH?>/images/person_1.jpg" alt="Image" class="img-fluid">
