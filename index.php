@@ -2,9 +2,7 @@
 $APPLICATION->SetTitle("Мебельная компания");
 ?>
 <?
-global $arrFilter;
 $arrFilter = array("!PROPERTY_DEAL"=> false);
-
 ?>
  <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
@@ -214,5 +212,7 @@ $arrFilter = array("!PROPERTY_DEAL"=> false);
 		"AREA_FILE_SUFFIX" => "inc",
 		"EDIT_TEMPLATE" => ""
 	)
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?>
+
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
 

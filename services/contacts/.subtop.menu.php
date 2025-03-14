@@ -1,8 +1,8 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Мои объявления", 
-		"/buyer/favorites/", 
+		"Обратная связь", 
+		"/services/contacts/feedback/", 
 		Array(), 
 		Array(), 
 		"" 

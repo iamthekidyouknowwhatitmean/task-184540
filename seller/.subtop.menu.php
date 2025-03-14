@@ -1,7 +1,7 @@
 <?
 $aMenuLinks = [
     ["Мои объявления",
-    "products/",
+    "/seller/products/",
     [],
     [],
     ""

@@ -15,13 +15,6 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Обратная связь",
-		"/services/feedback/",
-		Array(),
-		Array(),
-		""
-	),
-	Array(
 		"Новости", 
 		"/services/news/", 
 		Array(), 
